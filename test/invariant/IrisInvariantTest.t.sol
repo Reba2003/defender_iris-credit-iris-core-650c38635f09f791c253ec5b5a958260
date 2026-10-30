@@ -54,7 +54,7 @@ contract IrisInvariantTest is InvariantTest {
 
     /* Snapshots */
 
-    function _beforeCall() internal override {
+    function _beforeCall() internal virtual override {
         for (uint256 i; i < pods.length; ++i) {
             (,, uint256 fixedLeg,,) = iris.accrueLegsView(pods[i]);
             _lastFixedLeg[pods[i]] = fixedLeg;
